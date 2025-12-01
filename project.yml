@@ -1,0 +1,66 @@
+name: YouTube
+options:
+  bundleIdPrefix: com.abhishek
+  deploymentTarget:
+    macOS: "13.0"
+    visionOS: "2.0"
+  createIntermediateGroups: true
+targets:
+  YouTubeMacApp:
+    type: application
+    platform: macOS
+    sources:
+      - path: MacApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.abhishek.YouTube
+        PRODUCT_NAME: YouTube
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        INFOPLIST_FILE: MacApp/Info.plist
+        MACOSX_DEPLOYMENT_TARGET: "13.0"
+        SWIFT_VERSION: "5.0"
+        ENABLE_PREVIEWS: "YES"
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        DEVELOPMENT_TEAM: ""
+        ENABLE_HARDENED_RUNTIME: "YES"
+        COMBINE_HIDPI_IMAGES: "YES"
+        CLANG_ENABLE_MODULES: "YES"
+        SWIFT_OPTIMIZATION_LEVEL: "-O"
+        GCC_OPTIMIZATION_LEVEL: "3"
+        DEAD_CODE_STRIPPING: "YES"
+    info:
+      path: MacApp/Info.plist
+  YouTubeVisionApp:
+    type: application
+    platform: visionOS
+    sources:
+      - path: VisionApp
+      - path: VisionApp/Assets.xcassets
+    entitlements:
+      path: VisionApp/YouTube.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.abhishek.YouTube
+        PRODUCT_NAME: YouTube
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        INFOPLIST_FILE: VisionApp/Info.plist
+        XROS_DEPLOYMENT_TARGET: "2.0"
+        SWIFT_VERSION: "5.0"
+        ENABLE_PREVIEWS: "YES"
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        DEVELOPMENT_TEAM: ""
+        ENABLE_HARDENED_RUNTIME: "YES"
+        COMBINE_HIDPI_IMAGES: "YES"
+        CLANG_ENABLE_MODULES: "YES"
+        SWIFT_OPTIMIZATION_LEVEL: "-O"
+        GCC_OPTIMIZATION_LEVEL: "3"
+        DEAD_CODE_STRIPPING: "YES"
+    info:
+      path: VisionApp/Info.plist
+      properties:
+        CFBundleIconName: AppIcon
+        CFBundleIcons:
+          CFBundlePrimaryIcon:
+            CFBundleIconName: AppIcon 
