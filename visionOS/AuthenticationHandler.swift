@@ -1,7 +1,7 @@
 import SwiftUI
 import WebKit
 
-/// Handles authentication state and user session management for the Gmail web interface.
+/// Handles authentication state and user session management for the YouTube web interface.
 /// This class monitors the authentication state and provides user information when available.
 class AuthenticationHandler: NSObject, ObservableObject {
     /// Indicates whether the user is currently authenticated
@@ -32,6 +32,7 @@ class AuthenticationHandler: NSObject, ObservableObject {
                 const loginForm = document.querySelector('form[action*="signin"]');
                 if (loginForm) return { isLoginPage: true, isLoggedIn: false };
                 
+                // TODO: Verify if these selectors work for YouTube, as they were originally for Gmail
                 const userElement = document.querySelector('[data-email]');
                 if (userElement) return { isLoginPage: false, isLoggedIn: true, email: userElement.getAttribute('data-email') };
                 

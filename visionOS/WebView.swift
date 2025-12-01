@@ -56,7 +56,7 @@ struct WebView: UIViewRepresentable {
         configuration.allowsInlineMediaPlayback = true
         
         self.webView = WKWebView(frame: .zero, configuration: configuration)
-        // Use a Mac User Agent to request the desktop version of Gmail.
+        // Use a Mac User Agent to request the desktop version of YouTube.
         // This ensures access to the full feature set, which is usable with visionOS eye tracking.
         self.webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"
     }
@@ -86,7 +86,9 @@ struct WebView: UIViewRepresentable {
     ///   - uiView: The web view to update
     ///   - context: The context in which the update occurs
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        let request = URLRequest(url: url)
-        uiView.load(request)
+        if uiView.url != url {
+            let request = URLRequest(url: url)
+            uiView.load(request)
+        }
     }
 }

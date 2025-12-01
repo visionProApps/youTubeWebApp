@@ -1,10 +1,10 @@
 import SwiftUI
 
-/// The main content view of the application that hosts the Gmail web interface.
+/// The main content view of the application that hosts the YouTube web interface.
 /// This view provides a native interface and wraps the web content
 /// in a properly sized window.
 struct ContentView: View {
-    /// The URL of the Gmail web application
+    /// The URL of the YouTube web application
     private let youtubeURL = URL(string: "https://www.youtube.com")!
     
     /// Controls the immersive "Cinema Mode" which dims the environment

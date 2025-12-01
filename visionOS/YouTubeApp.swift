@@ -1,7 +1,7 @@
 import SwiftUI
 
-/// A native visionOS application that provides a desktop interface for Gmail.
-/// This app wraps the Gmail web interface in a native window while providing
+/// A native visionOS application that provides a desktop interface for YouTube.
+/// This app wraps the YouTube web interface in a native window while providing
 /// system-level integration features like authentication.
 @main
 struct YouTubeApp: App {
